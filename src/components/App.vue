@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <h3>Jokester</h3>
-    <button class="btn btn-danger" @click="initJokes">Get Jokes</button>
+    <button class="btn btn-danger" @click="initJokes">Get Ten Jokes</button>
+    <button class="btn btn-danger" @click="randomJoke">Random Joke</button>
     <br>
     <br>
     <div class="row">
@@ -9,6 +10,7 @@
         v-for="(joke, index) in $store.state.jokes"
         :joke="joke"
         :key="index"
+        :index="index"
       />
     </div>
   </div>
@@ -19,7 +21,7 @@ import { mapActions } from 'vuex';
 import Joke from './Joke';
 
 export default {
-  methods: mapActions(['initJokes']),
+  methods: mapActions(['initJokes', 'randomJoke']),
   components: {
     Joke
   }
