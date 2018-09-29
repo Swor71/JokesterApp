@@ -5,7 +5,7 @@
     <button class="btn btn-danger" @click="randomJoke">Random Joke</button>
     <br>
     <br>
-    <div class="row">
+    <div class="container d-flex flex-wrap">
       <Joke 
         v-for="(joke, index) in $store.state.jokes"
         :joke="joke"
